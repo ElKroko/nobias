@@ -70,7 +70,8 @@ export default function CustomizedInputBase(props) {
         <Paper
         component="form"
         color="primary"
-        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 500 , backgroundColor:"#7879F1"}}
+        sx={{ p: '0px 0px', display: 'flex', alignItems: 'center', width: 500 , backgroundColor:"#7879F1", justifyContent:"center"}}
+        
         >
 
         {!start ? 
@@ -87,7 +88,7 @@ export default function CustomizedInputBase(props) {
                 </IconButton>
             </>
             :
-            (<Link to={`/ChatbotEMP/${body.code}`} key={body.code}>  <Button variant="contained" color="boton" size="large" >Let's Go to Chatbot</Button> </Link>)
+            (<Link to={`/ChatbotEMP/${body.code}`} key={body.code}>  <Button variant="outlined" color="white" size="large" sx={{ml:1,width: 490, bordercolor:"#7879F1"}} >Iniciar Test - Empresa</Button> </Link>)
         }   
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         </Paper>
