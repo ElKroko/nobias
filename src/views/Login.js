@@ -6,10 +6,6 @@ import LoggedLayout from '../views/LoggedLayout';
 
 import theme from "../Components/ui/Theme";
 
-
-
-
-
 const Login = () => {
 
     const [user, setUser] = useState(null);
@@ -19,7 +15,7 @@ const Login = () => {
         { 
           !user 
             ? 
-          <Auth user={user} setUser={setUser}  /> 
+          <Auth user={user} setUser={setUser} /> 
             :
           <LoggedLayout user={user} setUser={setUser} />
         }

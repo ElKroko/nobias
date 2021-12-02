@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./App.css";
 import '@fontsource/roboto/400.css';
@@ -25,6 +25,9 @@ const LayoutsWithNavbar = () => {
 }
 
 function App() {
+
+  const [ employee, setEmployee ] = useState(null);
+
   return (
 
     <div className="App-header">
@@ -33,8 +36,9 @@ function App() {
             <Route exact path="/" element={<LayoutsWithNavbar/>}>
               <Route exact index element={<Inicio/>}/>
               <Route exact element={<Login/>} path="/Empresa/" />
-              <Route exact element={<Chatbot/>} path="/Chatbot/" />
-              <Route exact element={<InicioPersona/>} path="/Persona/" />
+              <Route exact element={<Chatbot flag={false} />} path="/Chatbot/" />
+              <Route exact element={<Chatbot flag={true} />} path="/ChatbotEMP/:code" />
+              <Route exact element={<InicioPersona employee={employee} setEmployee={setEmployee} />} path="/Persona/" />
               <Route exact element={<Capsulas/>} path="/Capsulas/" />
               <Route exact element={<Result/>} path="/Resultados/" />
             </Route>

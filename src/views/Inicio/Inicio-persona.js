@@ -7,8 +7,6 @@ import MenuIcon from "../../logoNB.png";
 import { Stack, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
-
 import CustomizedInputBase from '../../Components/Input/input.js';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +30,7 @@ const theme = createTheme({
     },
 });
 
-function InicioPersona () {
+function InicioPersona (props) {
 
     return(
         <div className="">    
@@ -61,7 +59,8 @@ function InicioPersona () {
                             <Link to="../Chatbot">
                             <Button variant="contained" color="boton" size="large" >Iniciar Test</Button>
                             </Link>
-                            <CustomizedInputBase/>
+
+                            <CustomizedInputBase {...props} />
                             
 
                         </Stack>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Chatbot from 'react-simple-chatbot';
+import { useParams } from "react-router-dom";
 import Link from './Link';
 
 // style-components
@@ -40,8 +41,10 @@ const chatbotStyle = {
 }
 
 const ChatbotNoBias = (props) => {
-    
-    const { employee } = props;
+
+    const { flag } = props;
+
+    let params = useParams();
 
     const steps = [ 
         {
@@ -61,7 +64,7 @@ const ChatbotNoBias = (props) => {
         },
         {
             id: "simulationLink",
-            component: <Link employee={employee} />,
+            component: <Link employee={ flag ? {code: params.code} : null } />,
             waitAction: true,
             asMessage: true,
             end: true,
