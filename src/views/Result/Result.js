@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   column: {
     flexBasis: "10%",
+    backgroundColor:"#fff",
   },
   column2: {
     flexBasis: "80%",
