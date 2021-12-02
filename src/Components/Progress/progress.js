@@ -4,46 +4,6 @@ import { LinearProgress } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-class ProgressBar extends Component {
-  render() {
-    const { classes, result } = this.props;
-    console.log(result);
-    let barColor;
-    if (result >= 80) {
-      barColor = classes.barRed;
-    } else if (result >= 60) {
-      barColor = classes.barOrange;
-    } else if (result >= 30){
-      barColor = classes.barYellow;
-    } else if (result >= 10){
-      barColor = classes.barYellow2;
-    } else {
-      barColor = classes.barGreen;
-    }
-    return (
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box sx={{ width: "100%", mr: 1 }}>
-          <LinearProgress
-            variant="determinate"
-            value={result}
-            style={{ borderRadius: 5, height: 10 }}
-            {...this.props}
-            classes={{
-              colorPrimary: classes.yellow,
-              barColorPrimary: barColor,
-            }}
-          />
-        </Box>
-        <Box sx={{ minWidth: 35 }}>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-          >{`${result}%`}</Typography>
-        </Box>
-      </Box>
-    );
-  }
-}
 
 const styles = (props) => ({
   green: {
@@ -65,5 +25,47 @@ const styles = (props) => ({
     backgroundColor: "#D95C5C",
   },
 });
+
+const ProgressBar = (props) => {
+
+  const { classes, result } = props;
+    
+  console.log(result);
+  let barColor;
+  if (result >= 80) {
+    barColor = classes.barRed;
+  } else if (result >= 60) {
+    barColor = classes.barOrange;
+  } else if (result >= 30){
+    barColor = classes.barYellow;
+  } else if (result >= 10){
+    barColor = classes.barYellow2;
+  } else {
+    barColor = classes.barGreen;
+  }
+  return (
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ width: "100%", mr: 1 }}>
+        <LinearProgress
+          variant="determinate"
+          value={result}
+          style={{ borderRadius: 5, height: 10 }}
+          {...props}
+          classes={{
+            colorPrimary: classes.yellow,
+            barColorPrimary: barColor,
+          }}
+        />
+      </Box>
+      <Box sx={{ minWidth: 35 }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+        >{`${result}%`}</Typography>
+      </Box>
+    </Box>
+  );
+}
+
 
 export default withStyles(styles)(ProgressBar);

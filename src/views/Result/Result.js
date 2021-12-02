@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: "80%",
     justifyContent: "",
     alignContent: "right",
+    backgroundColor:"#fff",
   },
 }));
 
