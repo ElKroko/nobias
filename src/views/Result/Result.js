@@ -15,8 +15,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import "./result.css";
-
 import FAB from "../../Components/Fab/fab.js"
 
 const Item = styled(Paper)(({ theme }) => ({
