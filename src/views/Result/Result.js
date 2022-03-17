@@ -102,7 +102,7 @@ export default function Result( ) {
     }
 
     if (array_opciones[1] !== "1") {
-      const texto2 = Explicaciones[bias]["situacion_1"][array_opciones[0]].split('#');
+      const texto2 = Explicaciones[bias]["situacion_2"][array_opciones[0]].split('#');
       texto_situacion_2 = texto2[0]
       texto_situacion_2_2 = texto2[1]
     } else{
